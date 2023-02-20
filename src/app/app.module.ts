@@ -13,10 +13,18 @@ import {MatButtonModule} from '@angular/material/button';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ContactComponent } from './componenets/contact/contact.component';
+import { jwtInterceptorProvider } from 'projects/auth/src/lib/services/jwt-interceptor';
+import { errorInterceptorProvider } from 'projects/auth/src/lib/services/error.interceptor';
+import { AuthModule } from 'projects/auth/src/public-api';
+import { HomeComponent } from './shared/home/home.component';
+import { MasterComponent } from './shared/master/master.component';
+import { TodoModule } from 'projects/todo/src/public-api';
 @NgModule({
   declarations: [
     AppComponent,
-    ContactComponent
+    ContactComponent,
+    HomeComponent,
+    MasterComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,9 +36,11 @@ import { ContactComponent } from './componenets/contact/contact.component';
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    AuthModule,
+    TodoModule
   ],
-  providers: [],
+  providers: [jwtInterceptorProvider, errorInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

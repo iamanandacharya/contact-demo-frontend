@@ -2,12 +2,23 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "app-common": [
+        "dist/app-common"
+      ],
+      "auth": [
+        "dist/auth"
+      ],
+      "todo": [
+        "dist/todo"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "noPropertyAccessFromIndexSignature": false,
     "noImplicitReturns": false,
     "strictPropertyInitialization": false,
     "noFallthroughCasesInSwitch": true,
